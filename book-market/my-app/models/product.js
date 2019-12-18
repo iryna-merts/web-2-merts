@@ -8,6 +8,6 @@ var schema = new Schema({
 	author: { type: String, required: true },
 	price: { type: Number, required: true },
 	sale: { type: Number, required: false }
-}); 
+});
 
 module.exports = mongoose.model("Product", schema);
