@@ -1,0 +1,125 @@
+.fa-shopping-cart {
+	margin: 15px;
+}
+.search {
+	border: 0;
+}
+#form-signin {
+	text-align: center;
+	margin-top: 100px;
+}
+.form-control {
+	margin: 3px;
+}
+.price {
+	font-weight: bold;
+}
+.nav-item {
+	margin: 3px;
+}
+.book-title {
+	height: 120px;
+}
+.description {
+	height: 145px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.basket {
+	margin-top: 20px;
+}
+.card {
+	height: 870px;
+}
+.card img {
+	max-width: 400px;
+	margin: 0 auto;
+}
+.cart-item {
+	height: 200px;
+	margin: 10px 0;
+	overflow: hidden;
+}
+.cart-item img {
+	max-height: 200px;
+}
+.cart-item-title {
+	height: 88px;
+}
+.cart-item-description {
+	height: 100px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+footer {
+	height: 50px;
+}
+.center {
+	text-align: center;
+}
+.profile-card {
+	height: 250px;
+	margin: 10px 0;
+}
+.profile-card img {
+	max-height: 200px;
+	margin: 20px 0;
+}
+textarea.form-control {
+	resize: none;
+	height: 160px;
+}
+.order-card {
+	min-height: 150px;
+	margin: 5px 0;
+}
+.order-card h3 {
+	margin: 20px 0;
+	text-align: center;
+}
+.order-card h5,
+.order-card p {
+	margin: 15px 0;
+}
+table {
+	margin: 5px;
+}
+td,
+th {
+	padding: 8px;
+}
+.date {
+	height: 27px;
+	overflow: hidden;
+}
+.remove-btn {
+	margin: 25px;
+}
+#vertical i {
+	line-height: 870px;
+	text-align: center;
+	color: #aaa;
+}
+#add-book {
+	text-decoration: none;
+}
+#vertical :hover {
+	color: #bbb;
+}
+.sale {
+	width: 55px;
+}
+label {
+	float: left;
+}
+span {
+	display: block;
+	overflow: hidden;
+	padding: 0 4px 0 6px;
+}
+.sale-badge {
+	color: red;
+}
+.toggle-pages a {
+	width: 49%;
+}
