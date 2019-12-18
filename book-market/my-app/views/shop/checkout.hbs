@@ -1,0 +1,66 @@
+<div class="row">
+	<div class="col-sm-3"></div>
+	<div class="col-sm-6 col-md-6 col-md-offset-4 col-sm-offset-3">
+		<p></p>
+		<h1>Checkout</h1>
+		<h4>Your Total: ${{total}}</h4>
+		<form action="/cart/checkout" method="post" id="checkout-form">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group">
+						<label for="email">E-mail</label>
+						<input type="email" id="email" value="{{email}}" name="email" class="form-control" required>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="text" id="name" value="{{name}}" name="name" class="form-control" required>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group">
+						<label for="adress">Adress</label>
+						<input type="text" id="adress" value="{{adress}}" name="adress" class="form-control" required>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group">
+						<label for="card-number">Credit Card Number</label>
+						<input type="text" id="card-number" name="card_number" class="form-control" required>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="form-group">
+						<label for="expiry-month">Expiration Month</label>
+						<input type="number" min="1" max="12" id="expiry-month" name="expiry_month" class="form-control" required>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="form-group">
+						<label for="expiry-year">Expiration Year</label>
+						<input type="number" min="{{year}}" max="9999" id="expiry-year" name="expiry_year" class="form-control" required>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group">
+						<label for="card-cvc">CVV</label>
+						<input type="password" id="card-cvv" name="card_cvv" class="form-control" required>
+					</div>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-success">Buy now</button>
+		</form>
+	</div>
+</div>
+
+<script>
+$(function(){
+	$("#card-cvv").mask("999");
+	$("#card-number").mask("9999 9999 9999 9999");
+});
+</script>

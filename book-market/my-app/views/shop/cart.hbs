@@ -1,0 +1,51 @@
+{{# each products}}
+<div class="cart-item shadow-sm row">
+	<div class="col-sm-4 col-md-2">
+		<img src="{{this.item.imagePath}}" alt="{{this.item.title}}">
+	</div>
+	<div class="col-sm-4 col-md-7">
+		<div class="cart-item-title">
+    		<h3 class="card-title">{{this.item.title}} {{#if this.item.sale}}<strong class="sale-badge"> -{{this.item.sale}}%!</strong>{{/if}}</h3>
+    		<h4 class="card-title">{{this.item.author}}</h4>
+    	</div>
+      <div class="cart-item-description">
+      	<p class="card-text">{{this.item.description}}</p>
+      </div>
+	</div>
+	<div class="col-sm-4 col-md-3">
+		<p></p>
+		<p>
+			<strong>Quantity: {{this.qty}}</strong>
+			<a href="/cart/increase/{{this.item._id}}" class="btn btn-primary"><i class="fas fa-plus"></i></a>
+			<a href="/cart/reduce/{{this.item._id}}" class="btn btn-warning"><i class="fas fa-minus"></i></a>
+			<a href="/cart/remove/{{this.item._id}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+		</p>
+		<p>
+			<strong>Price: {{this.price}}</strong>
+		</p>
+	</div>
+</div>
+{{/each}}
+{{#if products}}
+<div class="row">
+	<div class="col-sm-3">
+		<a href="/cart/remove-all" class="btn btn-danger remove-btn">Remove All</a> 
+	</div>
+	<div class="col-sm-6"></div>
+	<div class="col-sm-3">
+		<p></p>
+		<h4>Total price: {{totalPrice}}</h4>
+		<a href="/cart/checkout" class="btn btn-success buy-btn">Checkout</a> 
+	</div>
+</div>
+{{else}}
+	<div class="center">
+		<p></p>
+		<h3>Shopping cart is empty</h3>
+	</div>
+{{/if}}
+<script>
+	function submit(form_id) {
+		document.getElementById(form_id).submit();
+	}
+</script>

@@ -1,0 +1,70 @@
+<div class="row">
+	<div class="col-md-4">
+		{{#if userIsAdmin}}
+		<p></p>
+		<h2>Admin tools: </h2>
+		{{/if}}
+	</div>
+	<div class="col-md-4 toggle-pages">
+		<p></p>
+		<a href="/pages/{{previous}}" class="btn btn-primary" role="button"><i class="fas fa-angle-left"></i> Previous</a>
+		<a href="/pages/{{next}}" class="btn btn-primary" role="button">Next page <i class="fas fa-angle-right"></i></a>
+	</div>
+	<div class="col-md-4"></div>
+<div class="row">
+{{#each products}}
+	<div class="col-md-4">
+	  <div class="card prod-cart mb-4 shadow-sm">
+	    <img src="{{this.imagePath}}" alt="{{this.title}}" class="img-responsive">
+	    <div class="card-body">
+	    	<div class="col">
+		    	<div class="book-title">
+		    		<h3 class="card-title">{{this.title}}</h3>
+		    		<h4 class="card-title">{{this.author}}</h4>
+		    	</div>
+		      <div class="description">
+		      	<p class="card-text">{{this.description}}</p>
+		      </div>
+	      </div>
+	      <div class="d-flex justify-content-between align-items-center basket">
+				<div class="price pull-left">
+					<label>${{this.price}}</label>
+					{{#if ../userIsAdmin}}
+						{{#if this.sale}}
+						<a href="/remove-sale/{{ this._id }}" class="btn btn-warning" role="button"><i class="fas fa-trash-alt"> Sale</i></a>
+						{{else}}
+						<span>
+							<form action="/add-sale/{{ this._id }}" method="post">
+								-<input type="number" min="1" max="100" name="sale" class="sale">%
+								<button class="btn btn-warning" type="submit"> <i class="fas fa-plus"> Sale</i></button>
+							</form>
+						</span>
+						{{/if}}
+					{{else}}
+					{{#if this.sale}}<strong class="sale-badge"> -{{this.sale}}%!</strong>{{/if}}
+					{{/if}}
+				</div>
+				{{#if ../userIsAdmin}}
+
+				<div class="btns pull-right">
+					<a href="/edit/{{ this._id }}" class="btn btn-primary" role="button"><i class="far fa-edit"></i></a>
+					<a href="/remove-item/{{ this._id }}" class="btn btn-danger" role="button"><i class="fas fa-trash-alt"></i></a>
+				</div>
+				{{else}}
+					<a href="/add-to-cart/{{ this._id }}" class="btn btn-success pull-right" role="button">Add to basket</a>
+				{{/if}}
+	      </div>
+	    </div>
+	  </div>
+	</div>
+{{/each}}
+{{#if userIsAdmin}}
+<div class="col-md-4">
+	<a href="/add" id="add-book">
+		<div class="card prod-cart mb-4 shadow-sm" id="vertical">
+		<i class="fas fa-plus fa-7x"></i>
+		</div>
+	</a>
+</div>
+{{/if}}
+</div>
